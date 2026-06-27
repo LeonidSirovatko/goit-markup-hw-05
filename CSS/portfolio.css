@@ -1,0 +1,19 @@
+#portfolio {
+  padding: 120px 0;
+}
+
+#portfolio h2 {
+  text-align: center;
+  margin-bottom: 72px;
+  color: #2e2f42;
+}
+
+#portfolio li {
+  margin-bottom: 48px;
+}
+
+#portfolio h3 {
+  margin-top: 32px;
+  margin-bottom: 8px;
+  color: #2e2f42;
+}

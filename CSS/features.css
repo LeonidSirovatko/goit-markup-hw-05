@@ -1,0 +1,17 @@
+#features {
+  padding: 120px 0;
+}
+
+#features h2 {
+  margin-bottom: 40px;
+}
+
+#features h3 {
+  color: #2e2f42;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+#features li {
+  margin-bottom: 24px;
+}

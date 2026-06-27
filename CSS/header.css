@@ -1,0 +1,16 @@
+header {
+  padding: 24px;
+}
+
+header a {
+  color: #2e2f42;
+}
+
+header a:hover,
+header a:focus {
+  color: #404bbf;
+}
+
+address {
+  font-style: normal;
+}

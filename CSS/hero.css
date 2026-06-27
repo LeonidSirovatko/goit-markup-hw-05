@@ -1,0 +1,25 @@
+main section:first-child {
+  background-color: #2e2f42;
+  text-align: center;
+  padding: 120px 0;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 56px;
+  line-height: 1.07;
+  font-weight: 700;
+}
+
+button {
+  background-color: #4d5ae5;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  margin-top: 48px;
+}
+
+button:hover,
+button:focus {
+  background-color: #404bbf;
+}
