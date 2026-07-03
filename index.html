@@ -18,11 +18,14 @@
 </head>
 <body>
 
-    <!-- Шапка сайта -->
+        <!-- Шапка сайта -->
     <header id="header" class="header">
         <div class="container header-container">
-            <nav class="nav-block">
-                <a class="logo" href="./index.html"><span class="logo-span">Web</span>Studio</a>
+            <!-- 1. Логотип (теперь отдельный сосед хедера) -->
+            <a class="logo" href="./index.html"><span class="logo-span">Web</span>Studio</a>
+
+            <!-- 2. Чистая навигация -->
+            <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
@@ -30,6 +33,7 @@
                 </ul>
             </nav>
 
+            <!-- 3. Блок контактов -->
             <address class="address">
                 <ul class="address-list">
                     <li class="address-item"><a class="address-link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
@@ -38,6 +42,7 @@
             </address>
         </div>
     </header>
+
 
     <!-- Основной контент страницы -->
     <main>
@@ -49,11 +54,11 @@
             </div>
         </section>
        
-        <!-- Секция Преимущества -->
+        <!-- Секция Преимущества (Заменен класс на section и исправлен регистр заголовка) -->
         <section id="features" class="section">
             <div class="container">
-                <!-- Применен класс sr-only строго по критериям оформления -->
-                <h2 class="sr-only">Our Features</h2>
+                <!-- Текст заголовка изменен строго по макету -->
+                <h2 class="sr-only">Our features</h2>
                 <ul class="features-list">
                     <li class="features-item">
                         <h3 class="features-subtitle">Strategy</h3>

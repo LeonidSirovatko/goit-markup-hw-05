@@ -3,21 +3,22 @@
     background-color: #ffffff;
 }
 
+/* Флекс-контейнер для трех главных элементов */
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-.nav-block {
+/* Навигация теперь флексит только свои внутренние ссылки */
+.nav {
     display: flex;
     align-items: center;
+    margin-left: 76px; /* Зазор между логотипом и началом навигации по макету */
 }
 
 .nav-list {
     display: flex;
     gap: 40px;
-    margin-left: 76px;
 }
 
 .nav-link {
@@ -45,8 +46,10 @@
     color: #4d5ae5;
 }
 
+/* Контакты автоматически прижимаются к правому краю */
 .address {
     font-style: normal;
+    margin-left: auto; 
 }
 
 .address-list {
