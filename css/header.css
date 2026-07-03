@@ -1,6 +1,34 @@
 .header {
+    border-bottom: 1px solid #e7e9fc;
     background-color: #ffffff;
-     /* Геометрические свойства удалены */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-block {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    margin-left: 76px;
+}
+
+.nav-link {
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
 }
 
 .logo {
@@ -11,47 +39,25 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #2e2f42;
-    /* Del display and margin bottom and change line height = 1.33 */
 }
 
 .logo-span {
     color: #4d5ae5;
 }
 
- /* Геометрические свойства .nav удалены */
-
-.nav .nav-link {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
-/* Убирал text and pudding */   
-}
-
-.nav .nav-link:hover,
-.nav .nav-link:focus,
-.nav .nav-link:active {
-    color: #404bbf;
-}
-
-/* Стили картинки для контактов */
 .address {
     font-style: normal;
 }
 
-.address .address-link {
+.address-list {
+    display: flex;
+    gap: 40px;
+}
+
+.address-link {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #434455; /* Базовый серый цвет ссылок */
-    /* Del display and padding */
-    transition: color 250ms cubic-bezier(0.4, 0, 0, 0.2); /* Плавное изменение цвета */
-}
-
-/* Ховер-эффекты со скриншота */
-.address .address-link:hover,
-.address .address-link:focus {
-    color: #404bbf; /* Синий цвет при наведении */
+    color: #434455;
 }

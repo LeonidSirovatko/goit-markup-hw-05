@@ -6,13 +6,36 @@ body {
     padding: 0;
 }
 
-ul {
-    list-style: none;
+/* Глобальное скидывание стилей по селекторам тегов */
+h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
     padding: 0;
+}
+
+ul {
+    list-style: none;
 }
 
 a {
     text-decoration: none;
     font-style: normal;
+}
+
+img {
+    display: block;
+    height: auto;
+}
+
+/* Паттерн sr-only строго по ТЗ от ментора */
+.sr-only {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    margin: -1px;
 }

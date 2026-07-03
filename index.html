@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Подключение Google Fonts (Raleway и Roboto) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?
-                family=Raleway:ital,wght@0,100..900;1,100..900&
-                family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStudio</title>
 
-    <!--Нормализация стилей (Простая прямая CDN ссылка без лишних атрибутов) -->
+    <!-- 1. Нормализация стилей (Валидный modern-normalize через CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css">
     
-    <!-- Собственные стили проекта -->
-    <link rel="stylesheet" href="./css/main.css">
+    <!-- 2. Подключение Google Fonts (Строго в одну строку, без разрывов и пробелов) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <title>WebStudio</title>
+    <!-- 3. Собственные стили проекта -->
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 
     <!-- Шапка сайта -->
     <header id="header" class="header">
         <div class="container header-container">
-            <a class="logo" href="./index.html"><span class="logo-span">Web</span>Studio</a>
-
-            <nav class="nav">
+            <nav class="nav-block">
+                <a class="logo" href="./index.html"><span class="logo-span">Web</span>Studio</a>
                 <ul class="nav-list">
                     <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
@@ -52,9 +50,10 @@
         </section>
        
         <!-- Секция Преимущества -->
-        <section id="features" class="features-section">
+        <section id="features" class="section">
             <div class="container">
-                <h2 class="features-title">Our Features</h2>
+                <!-- Применен класс sr-only строго по критериям оформления -->
+                <h2 class="sr-only">Our Features</h2>
                 <ul class="features-list">
                     <li class="features-item">
                         <h3 class="features-subtitle">Strategy</h3>
@@ -77,7 +76,7 @@
         </section>
 
         <!-- Секция Команда -->
-        <section id="team" class="team-section">
+        <section id="team" class="section team-section">
             <div class="container">
                 <h2 class="team-title">Our Team</h2>
                 <ul class="team-list">
@@ -114,7 +113,7 @@
         </section>
 
         <!-- Секция Портфолио -->
-        <section id="portfolio" class="portfolio-section">
+        <section id="portfolio" class="section">
             <div class="container">
                 <h2 class="portfolio-title">Our Portfolio</h2>
                 <ul class="portfolio-list">

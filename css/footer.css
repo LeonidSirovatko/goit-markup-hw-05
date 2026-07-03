@@ -1,29 +1,35 @@
 .footer {
     background-color: #2e2f42;
-    /* Внутренние отступы (padding) удалены */
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-footer {
+    margin-bottom: 16px;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     font-size: 18px;
-    line-height: 1.33; /* Исправлено: 18px * 1.33 ≈ 24px высоты строки */
+    line-height: 1.33;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #f4f4fd;
-    /* Геометрическое свойство margin-bottom удалено */
+    display: inline-block;
 }
 
 .logo-footer-span {
     color: #4d5ae5;
 }
 
-/* Селектор тега .footer p заменен на чистый класс .footer-text */
 .footer-text {
+    max-width: 264px;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #f4f4fd;
-    /* Композиционные и геометрические свойства (margin, max-width) удалены */
 }
