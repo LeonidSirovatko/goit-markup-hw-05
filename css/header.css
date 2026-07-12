@@ -1,19 +1,30 @@
 .header {
     border-bottom: 1px solid #e7e9fc;
-    background-color: #ffffff;
 }
 
-/* Флекс-контейнер для трех главных элементов */
 .header-container {
     display: flex;
     align-items: center;
 }
 
-/* Навигация теперь флексит только свои внутренние ссылки */
+.logo {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4d5ae5;
+    margin-right: 76px;
+}
+
+.logo-span {
+    color: #2e2f42;
+}
+
 .nav {
     display: flex;
     align-items: center;
-    margin-left: 76px; /* Зазор между логотипом и началом навигации по макету */
 }
 
 .nav-list {
@@ -23,44 +34,19 @@
 
 .nav-link {
     display: block;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding: 24px 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #2e2f42;
+    position: relative; /* Для позиционирования ::after линии */
+    /* ТЗ: Плавное изменение цвета без all */
+    transition: color var(--transition-dur-func);
 }
 
-.logo {
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.33;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #2e2f42;
-}
-
-.logo-span {
-    color: #4d5ae5;
-}
-
-/* Контакты автоматически прижимаются к правому краю */
-.address {
-    font-style: normal;
-    margin-left: auto; 
-}
-
-.address-list {
-    display: flex;
-    gap: 40px;
-}
-
-.address-link {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #434455;
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.current {
+    color: #404bbf;
 }

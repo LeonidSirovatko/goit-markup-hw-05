@@ -20,7 +20,6 @@ body {
     padding-bottom: 120px;
 }
 
-/* Глобальное скидывание стилей по селекторам тегов */
 h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
     padding: 0;
@@ -37,10 +36,10 @@ a {
 
 img {
     display: block;
+    max-width: 100%;
     height: auto;
 }
 
-/* Паттерн sr-only строго по ТЗ от ментора */
 .sr-only {
     position: absolute;
     white-space: nowrap;

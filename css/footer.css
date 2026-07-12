@@ -6,23 +6,28 @@
 
 .footer-container {
     display: flex;
-    flex-direction: column;
+    align-items: baseline;
 }
 
-.logo-footer {
+.footer-info-block {
+    /* ТЗ: Отступ между блоками сформирован маржином, а не свойством gap хедера */
+    margin-right: 120px; 
+}
+
+.footer-logo {
+    display: inline-block;
     margin-bottom: 16px;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     font-size: 18px;
-    line-height: 1.33;
+    line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: #f4f4fd;
-    display: inline-block;
+    color: #4d5ae5;
 }
 
-.logo-footer-span {
-    color: #4d5ae5;
+.logo-span-footer {
+    color: #f4f4fd;
 }
 
 .footer-text {
@@ -32,4 +37,45 @@
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #f4f4fd;
+}
+
+/* Блок соцсетей в футере */
+.footer-social-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    transition: background-color var(--transition-dur-func);
+}
+
+/* Активное состояние иконок в футере по макету */
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: #31d0aa;
+}
+
+.footer-social-icon {
+    fill: #f4f4fd;
 }
