@@ -6,3 +6,4 @@
 @import './portfolio.css';
 @import './modal.css';
 @import './footer.css';
+@import url("./modal.css"); /* Новый файл для бэкдропа и модалки */
