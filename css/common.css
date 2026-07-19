@@ -1,3 +1,8 @@
+:root {
+    /* Кривая и время для плавных ховеров по ТЗ */
+    --transition-dur-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .container {
     width: 100%;
     max-width: 1158px;
@@ -40,6 +45,7 @@ img {
     height: auto;
 }
 
+/* Скрытие заголовков для роботов строго по ТЗ */
 .sr-only {
     position: absolute;
     white-space: nowrap;

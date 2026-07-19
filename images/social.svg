@@ -1,0 +1,16 @@
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <symbol id="twitter" viewBox="0 0 16 16" fill="currentColor">
+            <image width="16" height="16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAShJREFUeAGNUu2NwjAMTSpxCIkfZQLY4G6DgwkYgREYgREYgREYATEBMAEjBKkpH6XB+NEEQtRUtWTlw/az8/Lk5UL/IrDrVRwGA3kSNcb5Q15G2Pd6civOZzPX2lDgy7pipWjEsSNy8tws3gG+WLErTIMAEgDcqtgGU75E8Ii9Bzj0muyapsPb0EFpXa4igOi8E03m+MBaFPRbAVadAUj0mShqGBEFAHCArYsdH7arGx+ACoCirVk+mLByE/IR5iZ1AMY87DfJcbf7mCVJMuFD2ulEfsA3pwN0ZX+xD334BLcqdqQ5PqCJRj7ynKZWKF8Jnj7ifECmWfb6c7rdaBqC4wlOhQw0q6Ys1+/iqMZrnuc7+JBaF39EMpWSTv3+z140WJbdx+HdE246w8F8XoLHAAAAAElFTkSuQmCC" />
+        </symbol>
+        <symbol id="linkedin" viewBox="0 0 16 16" fill="currentColor">
+            <image width="16" height="16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAOBJREFUeAHtUtENgkAMvR5oYvRDJxAncARvBDfQTXQEHYERnAA3kA3UCSQBQgK0tQgRMTEBP/zyJS931+a9vjSnkiRfhSHeogjPacpz1RWFUMglc091hBaOm8+OKGJHEZ2EHjNP1a8BcYwbpdgpHszqOBrZbpLwggjXZQ2CLNP7fh83RLB8iIB9AGs3HMLBlthGSqZqFIebZTjTGtbVkKDXo6UYOQDPuYaZjAwydouUY9VYdA1E3LZdu8TVE8vSM7n7dRmcVgYi3gFAMBjAhYj3L612BiK+fup98XP+Bu+4AyTlZirDQNvpAAAAAElFTkSuQmCC" />
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 16 16" fill="currentColor">
+            <image width="16" height="16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAalJREFUeAGNU4ltwkAQvDsbIR4ppoLQAaaCQAWhA6CC0EHoINABqSCkAkgF0EGgAjuSDRLg28zwh2CSlez7dvaZm9Nqb3GcPItITUT7WitPXTERFeJshlmvWHRfuaf5i6JkgsHHcqy1jNVN0z4SNTCZrtemDrA0EUCWy01T/WFBIN5yKQ+rlVSIYdUIsBlFkR2lAfgd1gC9EBhFKz+O7Rvmn0YpU74sm1kYOJOxAT86xrE8Oo4ZgoNBoZAJwMMUrmUEkPI5GC1VksSCC+1ZK21jVAcgEGiHPC8UnDbO5kkic67d34XbAZnO500djuF+s8+KELiHefXc21z2jIHX2DsD78JaxWvjDdynBrhljuMEHMNQfaUGKJWYVcbI1jpnnwYOumxt53My90qmLkkE+xOwj54NAEmL5buuaRyBrr5DIlagZ5DoMVsupz9wXTXsM1OPpGLuoYJ6NqvfTxXtMKjAztRWxidjEAxVELZ1uiR0Z9rfaoFy/K+UD0atELNYJE8/HhMUCbHo6S0wXyx8aiB0ClFV9eEA8m1CXZ29Mr0UfEjOmAhC67O1bysc+91dEHcKAAAAAElFTkSuQmCC" />
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 16 16" fill="currentColor">
+            <image width="16" height="16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAALVJREFUeAHtUsENwjAMtEnzqNQHG5AVmABGYgNmYQM26ArdgDJBipq+SGISUiQUNVEEPLmPHefuZNkGyEBKEkrpdhyNVMqQj0S0eedUOTHntgVAgRhqLq5jXtKAc9i5IObn4MTnZzLArcgA0QqikDNGh7quTku8FRRAa7qm/ooMcsC4oJS9AJBI8LumYduPO0DEPq4tDbEPjZFf2by2l5A6KMU0maM/nnBA932K9/UQ/wY/MHgAFqVCQfhgI60AAAAASUVORK5CYII=" />
+        </symbol>
+    </defs>
+</svg>

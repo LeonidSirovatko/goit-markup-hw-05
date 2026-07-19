@@ -1,25 +1,50 @@
+/* ================= СТИЛИ СЕКЦИИ ПРЕИМУЩЕСТВА (FEATURES) СТРОГО ПО FIGMA ================= */
+
+/* Флекс-сетка для четырёх карточек преимуществ */
 .features-list {
     display: flex;
-    gap: 24px;
+    gap: 24px; /* Расстояние между карточками строго по Figma */
 }
 
+/* Расчет ширины каждой карточки из четырёх колонок (1158px контейнер) */
 .features-item {
     width: calc((100% - 72px) / 4);
 }
 
-.features-subtitle {
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
+/* Серый блок-подложка для векторной SVG иконки строго по Figma */
+.features-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px; /* Фиксированная высота строго по Figma */
+    background-color: #f4f4fd; /* Цвет Cloud (#F4F4FD) строго по Figma */
+    border: 1px solid #8e8f99; /* Рамка 1px All sides цвета Light Slate (#8E8F99) */
+    border-radius: 4px; /* Скругление углов 4px по Figma */
+    margin-bottom: 8px; /* Внутренний шаг Gap 8px до текста по Figma */
 }
 
+/* Задаем fill непосредственно на SVG элемент */
+.features-icon {
+    fill: #2e2f42; /* Цвет Navy Blue по Figma */
+}
+
+/* Маленькие заголовки преимуществ (Strategy, Punctuality...) */
+.features-subtitle {
+    margin-bottom: 8px; /* Внутренний шаг Gap 8px до параграфа по Figma */
+    font-family: "Roboto", sans-serif;
+    font-weight: 500; /* Medium жирность строго по Figma */
+    font-size: 20px; /* Размер 20px строго по Figma */
+    line-height: 1.2; /* Line height 24px (24 / 20 = 1.2) строго по Figma */
+    letter-spacing: 0.02em; /* 2% межбуквенный интервал */
+    color: #2e2f42; /* Цвет Navy Blue (#2E2F42) */
+}
+
+/* Обычный текст описания преимущества */
 .features-text {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #434455;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400; /* Regular по Figma */
+    font-size: 16px; /* Размер 16px по Figma */
+    line-height: 1.5; /* Line height 24px (24 / 16 = 1.5) по Figma */
+    letter-spacing: 0.02em; /* 2% межбуквенный интервал */
+    color: #434455; /* Цвет Slate (#434455) */
 }
