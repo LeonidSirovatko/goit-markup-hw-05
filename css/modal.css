@@ -13,17 +13,17 @@
 }
 
 /* Переключение видимости строго по новому ТЗ через класс is-open */
-.backdrop.is-open + .modal {
+body:has(.backdrop.is-open) .modal {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     visibility: visible;
 }
 
 .modal {
-    position: fixed; /* Меняем на fixed, чтобы окно не зависело от прокрутки страницы */
+    position: fixed; 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.9); /* Изначально окно чуть уменьшено */
+    transform: translate(-50%, -50%) scale(0.9); 
     width: 408px;
     min-height: 584px;
     background: #fcfcfc;
@@ -32,17 +32,13 @@
                 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     padding: 72px 24px 24px 24px;
-    z-index: 1000; /* Чтобы окно было строго поверх темного фона бэкдропа */
+    z-index: 1000;
     
-    /* СТРОГО ДОБАВЛЯЕМ СЮДА: скрываем окно по умолчанию */
     opacity: 0;
     visibility: hidden;
-    
-    /* Плавная анимация проявления и увеличения масштаба */
-    transition: transform var(--transition-dur-func), 
-                opacity var(--transition-dur-func), 
-                visibility var(--transition-dur-func);
+    transition: transform var(--transition-dur-func), opacity var(--transition-dur-func), visibility var(--transition-dur-func);
 }
+
 
 /* СТРОГО ДОБАВЛЯЕМ ЭТОТ КЛАСС: когда окно открыто, делаем его видимым */
 .modal.is-open {
