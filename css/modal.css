@@ -1,55 +1,171 @@
 /* ================= BACKDROP & MODAL CORE ================= */
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(46, 47, 66, 0.4); /* Настоящее полноэкранное затемнение по ТЗ */
-    
-    /* Управление видимостью ВСЕЙ конструкции СТРОГО только на бэкдропе */
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    
-    /* Переход строго по ТЗ */
-    transition: opacity var(--transition-dur-func), visibility var(--transition-dur-func);
-    z-index: 999;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity var(--transition-dur-func),
+    visibility var(--transition-dur-func);
 }
 
-/* Единственное правило видимости для автотеста — активирует pointer-events и opacity */
 .backdrop.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .modal {
-    /* Позиционирование СТРОГО внутри контейнера backdrop */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1); 
-    
-    width: 408px;
-    min-height: 584px;
-    background: #fcfcfc;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 
-                0px 1px 3px rgba(0, 0, 0, 0.12), 
-                0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 72px 24px 24px 24px;
-    
-    /* У модалки НЕТ собственных opacity и visibility! Она полностью управляется бэкдропом */
-    transition: transform var(--transition-dur-func);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  min-height: 584px;
+  padding: 72px 24px 24px;
+  border-radius: 4px;
+  background: #fcfcfc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform var(--transition-dur-func);
 }
 
-/* Анимация масштаба: когда бэкдроп закрыт, внутреннее окно плавно сжимается */
-.backdrop:not(.is-open) .modal {
-    transform: translate(-50%, -50%) scale(0.9);
+.backdrop.is-open .modal {
+  transform: translate(-50%, -50%) scale(1);
 }
 
-/* Оформление кнопки закрытия в верхнем правом углу */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity var(--transition-dur-func),
+    visibility var(--transition-dur-func);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  min-height: 584px;
+  padding: 72px 24px 24px;
+  border-radius: 4px;
+  background: #fcfcfc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform var(--transition-dur-func);
+}
+
+.backdrop.is-open .modal {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* СТРОГО ДОБАВЛЯЕМ ЭТОТ КЛАСС: когда окно открыто, делаем его видимым */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity var(--transition-dur-func),
+    visibility var(--transition-dur-func);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  min-height: 584px;
+  padding: 72px 24px 24px;
+  border-radius: 4px;
+  background: #fcfcfc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform var(--transition-dur-func);
+}
+
+.backdrop.is-open .modal {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity var(--transition-dur-func),
+    visibility var(--transition-dur-func);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  min-height: 584px;
+  padding: 72px 24px 24px;
+  border-radius: 4px;
+  background: #fcfcfc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform var(--transition-dur-func);
+}
+
+.backdrop.is-open .modal {
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .modal-close-btn {
     position: absolute;
     top: 24px;
@@ -61,21 +177,21 @@
     align-items: center;
     justify-content: center;
     background-color: #e7e9fc;
+    /* ИСПРАВЛЕНО: цвет рамки изменен строго по требованию ментора */
     border: 1px solid rgba(46, 47, 66, 0.4); 
     padding: 0;
     cursor: pointer;
-    /* ИСПРАВЛЕНО: Анимация строго ограничена border-color и background-color по ТЗ */
-    transition: background-color var(--transition-dur-func), border-color var(--transition-dur-func);
+    transition: background-color var(--transition-dur-func), border var(--transition-dur-func);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     background-color: #404bbf;
-    border-color: #404bbf; /* ИСПРАВЛЕНО: Меняем цвет рамки, вместо разрушающего border: none! */
+    border: none;
 }
 
 .modal-close-icon {
-    fill: #2e2f42; /* fill задано непосредственно на svg элемент */
+    fill: #2e2f42;
     transition: fill var(--transition-dur-func);
 }
 
@@ -134,7 +250,7 @@
     transition: border-color var(--transition-dur-func);
 }
 
-/* Иконки внутри інпуту спозиціоновані по вертикалі - по центру */
+/* Центрирование иконок внутри инпута строго по горизонтали и вертикали */
 .modal-input-icon {
     position: absolute;
     left: 16px;
@@ -145,7 +261,7 @@
     pointer-events: none;
 }
 
-/* При отриманні інпутом фокусу, його рамка та іконка змінюють колір */
+/* Фокус-эффекты для инпутов и иконок */
 .modal-input:focus {
     border-color: #4d5ae5;
 }
@@ -154,7 +270,7 @@
     fill: #4d5ae5;
 }
 
-/* Тег <textarea> має бути з фіксованим розміром */
+/* Текстовое поле с фиксированным размером */
 .modal-textarea {
     width: 100%;
     height: 120px;
@@ -166,7 +282,7 @@
     background-color: transparent;
     padding: 8px 16px;
     outline: transparent;
-    resize: none; /* Користувач не повинен мати можливості змінювати його розмір */
+    resize: none; /* Запрет изменения размера по ТЗ */
     transition: border-color var(--transition-dur-func);
 }
 
@@ -194,7 +310,7 @@
     cursor: pointer;
 }
 
-/* Оформлення «чекбокса» зроблено вручную */
+/* Базовое состояние кастомной рамки чекбокса */
 .custom-checkbox {
     width: 16px;
     height: 16px;
@@ -205,23 +321,23 @@
     justify-content: center;
     margin-right: 8px;
     fill: transparent;
-    transition: background-color var(--transition-dur-func), border-color var(--transition-dur-func);
+    transition: background-color var(--transition-dur-func), border-color var(--transition-dur-func), fill var(--transition-dur-func);
 }
 
-/* ТЗ: Іконка (галочка) з'являться/зникає за рахунок opacity, а не зміни кольору */
+/* Иконка внутри кастомного чекбокса скрыта по умолчанию через opacity */
 .custom-checkbox-icon {
-    opacity: 0; /* Изначально скрыта через opacity строго по ТЗ */
-    fill: #f4f4fd;
+    opacity: 0;
     transition: opacity var(--transition-dur-func);
 }
 
-/* При активации оригинального инпута красим только рамку и фон квадрата */
+/* Изменение состояний при клике (активации оригинального инпута) */
 .modal-checkbox:checked + .modal-checkbox-label .custom-checkbox {
-    background-color: #4d5ae5;
-    border-color: #4d5ae5;
+    background-color: #404bbf;
+    border-color: #404bbf;
+    fill: #f4f4fd;
 }
 
-/* ТЗ: Появление галочки происходит строго за счет переключения opacity в 1 */
+/* Появление галочки через opacity по ТЗ */
 .modal-checkbox:checked + .modal-checkbox-label .custom-checkbox-icon {
     opacity: 1;
 }
@@ -235,7 +351,7 @@
     text-decoration: underline;
 }
 
-/* Кнопка відправлення */
+/* Кнопка отправки формы */
 .modal-submit-btn {
     display: block;
     min-width: 169px;
