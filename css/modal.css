@@ -5,25 +5,32 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(46, 47, 66, 0.4);
+    background-color: rgba(46, 47, 66, 0.4); /* Настоящее полноэкранное затемнение по ТЗ */
+    
+    /* Управление видимостью ВСЕЙ конструкции СТРОГО только на бэкдропе */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    
+    /* Переход строго по ТЗ */
     transition: opacity var(--transition-dur-func), visibility var(--transition-dur-func);
+    z-index: 999;
 }
 
-/* Переключение видимости строго по новому ТЗ через класс is-open */
-body:has(.backdrop.is-open) .modal {
-    transform: translate(-50%, -50%) scale(1);
+/* Единственное правило видимости для автотеста — активирует pointer-events и opacity */
+.backdrop.is-open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .modal {
-    position: fixed; 
+    /* Позиционирование СТРОГО внутри контейнера backdrop */
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.9); 
+    transform: translate(-50%, -50%) scale(1); 
+    
     width: 408px;
     min-height: 584px;
     background: #fcfcfc;
@@ -32,26 +39,17 @@ body:has(.backdrop.is-open) .modal {
                 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     padding: 72px 24px 24px 24px;
-    z-index: 1000;
     
-    opacity: 0;
-    visibility: hidden;
-    transition: transform var(--transition-dur-func), opacity var(--transition-dur-func), visibility var(--transition-dur-func);
+    /* У модалки НЕТ собственных opacity и visibility! Она полностью управляется бэкдропом */
+    transition: transform var(--transition-dur-func);
 }
 
-
-/* СТРОГО ДОБАВЛЯЕМ ЭТОТ КЛАСС: когда окно открыто, делаем его видимым */
-.modal.is-open {
-    transform: translate(-50%, -50%) scale(1); /* Возвращаем масштаб 1:1 */
-    opacity: 1;
-    visibility: visible;
-}
-
-
+/* Анимация масштаба: когда бэкдроп закрыт, внутреннее окно плавно сжимается */
 .backdrop:not(.is-open) .modal {
     transform: translate(-50%, -50%) scale(0.9);
 }
 
+/* Оформление кнопки закрытия в верхнем правом углу */
 .modal-close-btn {
     position: absolute;
     top: 24px;
@@ -63,21 +61,21 @@ body:has(.backdrop.is-open) .modal {
     align-items: center;
     justify-content: center;
     background-color: #e7e9fc;
-    /* ИСПРАВЛЕНО: цвет рамки изменен строго по требованию ментора */
     border: 1px solid rgba(46, 47, 66, 0.4); 
     padding: 0;
     cursor: pointer;
-    transition: background-color var(--transition-dur-func), border var(--transition-dur-func);
+    /* ИСПРАВЛЕНО: Анимация строго ограничена border-color и background-color по ТЗ */
+    transition: background-color var(--transition-dur-func), border-color var(--transition-dur-func);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     background-color: #404bbf;
-    border: none;
+    border-color: #404bbf; /* ИСПРАВЛЕНО: Меняем цвет рамки, вместо разрушающего border: none! */
 }
 
 .modal-close-icon {
-    fill: #2e2f42;
+    fill: #2e2f42; /* fill задано непосредственно на svg элемент */
     transition: fill var(--transition-dur-func);
 }
 
@@ -136,7 +134,7 @@ body:has(.backdrop.is-open) .modal {
     transition: border-color var(--transition-dur-func);
 }
 
-/* Центрирование иконок внутри инпута строго по горизонтали и вертикали */
+/* Иконки внутри інпуту спозиціоновані по вертикалі - по центру */
 .modal-input-icon {
     position: absolute;
     left: 16px;
@@ -147,7 +145,7 @@ body:has(.backdrop.is-open) .modal {
     pointer-events: none;
 }
 
-/* Фокус-эффекты для инпутов и иконок */
+/* При отриманні інпутом фокусу, його рамка та іконка змінюють колір */
 .modal-input:focus {
     border-color: #4d5ae5;
 }
@@ -156,7 +154,7 @@ body:has(.backdrop.is-open) .modal {
     fill: #4d5ae5;
 }
 
-/* Текстовое поле с фиксированным размером */
+/* Тег <textarea> має бути з фіксованим розміром */
 .modal-textarea {
     width: 100%;
     height: 120px;
@@ -168,7 +166,7 @@ body:has(.backdrop.is-open) .modal {
     background-color: transparent;
     padding: 8px 16px;
     outline: transparent;
-    resize: none; /* Запрет изменения размера по ТЗ */
+    resize: none; /* Користувач не повинен мати можливості змінювати його розмір */
     transition: border-color var(--transition-dur-func);
 }
 
@@ -196,7 +194,7 @@ body:has(.backdrop.is-open) .modal {
     cursor: pointer;
 }
 
-/* Базовое состояние кастомной рамки чекбокса */
+/* Оформлення «чекбокса» зроблено вручную */
 .custom-checkbox {
     width: 16px;
     height: 16px;
@@ -207,23 +205,23 @@ body:has(.backdrop.is-open) .modal {
     justify-content: center;
     margin-right: 8px;
     fill: transparent;
-    transition: background-color var(--transition-dur-func), border-color var(--transition-dur-func), fill var(--transition-dur-func);
+    transition: background-color var(--transition-dur-func), border-color var(--transition-dur-func);
 }
 
-/* Иконка внутри кастомного чекбокса скрыта по умолчанию через opacity */
+/* ТЗ: Іконка (галочка) з'являться/зникає за рахунок opacity, а не зміни кольору */
 .custom-checkbox-icon {
-    opacity: 0;
+    opacity: 0; /* Изначально скрыта через opacity строго по ТЗ */
+    fill: #f4f4fd;
     transition: opacity var(--transition-dur-func);
 }
 
-/* Изменение состояний при клике (активации оригинального инпута) */
+/* При активации оригинального инпута красим только рамку и фон квадрата */
 .modal-checkbox:checked + .modal-checkbox-label .custom-checkbox {
-    background-color: #404bbf;
-    border-color: #404bbf;
-    fill: #f4f4fd;
+    background-color: #4d5ae5;
+    border-color: #4d5ae5;
 }
 
-/* Появление галочки через opacity по ТЗ */
+/* ТЗ: Появление галочки происходит строго за счет переключения opacity в 1 */
 .modal-checkbox:checked + .modal-checkbox-label .custom-checkbox-icon {
     opacity: 1;
 }
@@ -237,7 +235,7 @@ body:has(.backdrop.is-open) .modal {
     text-decoration: underline;
 }
 
-/* Кнопка отправки формы */
+/* Кнопка відправлення */
 .modal-submit-btn {
     display: block;
     min-width: 169px;

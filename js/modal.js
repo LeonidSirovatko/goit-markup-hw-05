@@ -4,8 +4,7 @@ const backdrop = document.querySelector("[data-modal]");
 
 if (openModalBtn && closeModalBtn && backdrop) {
   const toggleModal = () => {
-    // Управляем классом СТРОГО только на бэкдропе по требованию ТЗ
-    backdrop.classList.toggle("is-open"); 
+    backdrop.classList.toggle("is-open"); // Керування видимістю лише через бэкдроп по ТЗ
     document.body.classList.toggle("modal-open");
   };
 
