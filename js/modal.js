@@ -1,25 +1,15 @@
 const openModalBtn = document.querySelector("[data-modal-open]");
 const closeModalBtn = document.querySelector("[data-modal-close]");
-const modal = document.querySelector("[data-modal]");
+const backdrop = document.querySelector("[data-modal]"); // Находим темный фон
+const modal = document.querySelector("#modal"); // Находим само белое окно по id
 
-if (openModalBtn && closeModalBtn && modal) {
+if (openModalBtn && closeModalBtn && backdrop && modal) {
   const toggleModal = () => {
-    modal.classList.toggle("is-open");
-    document.body.classList.toggle("modal-open");
+    backdrop.classList.toggle("is-open"); // Включаем/выключаем темный фон
+    modal.classList.toggle("is-open");    // Включаем/выключаем белое окно
+    document.body.classList.toggle("modal-open"); // Блокируем скролл страницы
   };
 
   openModalBtn.addEventListener("click", toggleModal);
   closeModalBtn.addEventListener("click", toggleModal);
-
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      toggleModal();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.classList.contains("is-open")) {
-      toggleModal();
-    }
-  });
 }

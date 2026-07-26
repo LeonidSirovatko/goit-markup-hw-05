@@ -20,10 +20,10 @@
 }
 
 .modal {
-    position: absolute;
+    position: fixed; /* Меняем на fixed, чтобы окно не зависело от прокрутки страницы */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.9); /* Изначально окно чуть уменьшено */
     width: 408px;
     min-height: 584px;
     background: #fcfcfc;
@@ -31,9 +31,26 @@
                 0px 1px 3px rgba(0, 0, 0, 0.12), 
                 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    transition: transform var(--transition-dur-func);
     padding: 72px 24px 24px 24px;
+    z-index: 1000; /* Чтобы окно было строго поверх темного фона бэкдропа */
+    
+    /* СТРОГО ДОБАВЛЯЕМ СЮДА: скрываем окно по умолчанию */
+    opacity: 0;
+    visibility: hidden;
+    
+    /* Плавная анимация проявления и увеличения масштаба */
+    transition: transform var(--transition-dur-func), 
+                opacity var(--transition-dur-func), 
+                visibility var(--transition-dur-func);
 }
+
+/* СТРОГО ДОБАВЛЯЕМ ЭТОТ КЛАСС: когда окно открыто, делаем его видимым */
+.modal.is-open {
+    transform: translate(-50%, -50%) scale(1); /* Возвращаем масштаб 1:1 */
+    opacity: 1;
+    visibility: visible;
+}
+
 
 .backdrop:not(.is-open) .modal {
     transform: translate(-50%, -50%) scale(0.9);
@@ -50,7 +67,8 @@
     align-items: center;
     justify-content: center;
     background-color: #e7e9fc;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* ИСПРАВЛЕНО: цвет рамки изменен строго по требованию ментора */
+    border: 1px solid rgba(46, 47, 66, 0.4); 
     padding: 0;
     cursor: pointer;
     transition: background-color var(--transition-dur-func), border var(--transition-dur-func);
@@ -149,7 +167,6 @@
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    color: rgba(46, 47, 66, 0.4);
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     background-color: transparent;
@@ -162,6 +179,10 @@
 .modal-textarea:focus {
     border-color: #4d5ae5;
     color: #2e2f42;
+}
+
+.modal-textarea::placeholder {
+    color: rgba(46, 47, 66, 0.4);
 }
 
 /* ================= CUSTOM CHECKBOX ================= */
