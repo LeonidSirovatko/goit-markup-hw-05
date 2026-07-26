@@ -6,7 +6,7 @@
         <symbol id="send" viewBox="0 0 24 24" fill="none">
             <path fill="currentColor" d="M24 2 0 13.25l7.6699 2.3672L19.5 6.375 10.5017 16.4913l73e-4 23e-4-9e-3-23e-4V22l4.3013-4.1817 5.4488 1.6817z" />
         </symbol>
-        <symbol id="phone" viewBox="0 0 18 24" fill="none">
+        <symbol id="phone-modal" viewBox="0 0 18 24" fill="none">
             <path fill="currentColor" d="M14.2263 14.3651l-1.8382-0.2099c-0.4414-0.0506-0.8756 0.1014-1.1868 0.4125l-1.3316 1.3316c-2.048-1.0421-3.7269-2.7138-4.769-4.769l1.3388-1.3389C6.7507 9.4803 6.9026 9.046 6.852 8.6046L6.6421 6.7809C6.5553 6.05 5.9401 5.5 5.202 5.5H3.95c-0.8177 0-1.498 0.6803-1.4473 1.498 0.3835 6.1803 5.3262 11.1158 11.4992 11.4993 0.8178 0.0507 1.498-0.6296 1.498-1.4473v-1.252c73e-4-0.7309-0.5427-1.346-1.2736-1.4329z" />
         </symbol>
         <symbol id="email" viewBox="0 0 18 24" fill="none">
@@ -20,7 +20,7 @@
                 </clipPath>
             </defs>
         </symbol>
-        <symbol id="Checkbox" viewBox="0 0 14 14" fill="none">
+        <symbol id="click-checkbox" viewBox="0 0 14 14" fill="none">
             <rect stroke-width="0.875" stroke="currentColor" stroke-opacity="0.4" width="13.125" height="13.125" rx="1.3125" x="0.4375" y="0.4375" />
         </symbol>
         <symbol id="diagram" viewBox="0 0 64 64" fill="none">

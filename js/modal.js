@@ -1,13 +1,12 @@
 const openModalBtn = document.querySelector("[data-modal-open]");
 const closeModalBtn = document.querySelector("[data-modal-close]");
-const backdrop = document.querySelector("[data-modal]"); // Находим темный фон
-const modal = document.querySelector("#modal"); // Находим само белое окно по id
+const backdrop = document.querySelector("[data-modal]");
 
-if (openModalBtn && closeModalBtn && backdrop && modal) {
+if (openModalBtn && closeModalBtn && backdrop) {
   const toggleModal = () => {
-    backdrop.classList.toggle("is-open"); // Включаем/выключаем темный фон
-    modal.classList.toggle("is-open");    // Включаем/выключаем белое окно
-    document.body.classList.toggle("modal-open"); // Блокируем скролл страницы
+    // Управляем классом СТРОГО только на бэкдропе по требованию ТЗ
+    backdrop.classList.toggle("is-open"); 
+    document.body.classList.toggle("modal-open");
   };
 
   openModalBtn.addEventListener("click", toggleModal);
